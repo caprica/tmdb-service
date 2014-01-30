@@ -57,13 +57,10 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <!-- 
                 <filtering>true</filtering>
                 <excludes>
                     <exclude>.gitignore</exclude>
                 </excludes>
-                -->
-                <filtering>true</filtering>
             </resource>
         </resources>
     </build>
