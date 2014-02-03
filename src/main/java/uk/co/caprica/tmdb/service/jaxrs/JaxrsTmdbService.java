@@ -107,7 +107,7 @@ public class JaxrsTmdbService implements TmdbService {
             .target(MOVIE_URL)
             .path(String.valueOf(id))
             .queryParam("api_key", apiKey)
-            .queryParam("append_to_response", "credits")
+            .queryParam("append_to_response", "credits,alternative_titles")
             .request(MediaType.APPLICATION_JSON)
             .get(Movie.class);
     }

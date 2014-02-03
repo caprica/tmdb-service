@@ -94,6 +94,9 @@ public final class Movie {
 
     private Credits credits;
 
+    @XmlAttribute(name="alternative_titles")
+    private AlternativeTitles alternativeTitles;
+
     public boolean isAdult() {
         return adult;
     }
@@ -286,6 +289,14 @@ public final class Movie {
         this.credits = credits;
     }
 
+    public AlternativeTitles getAlternativeTitles() {
+        return alternativeTitles;
+    }
+
+    public void setAlternativeTitles(AlternativeTitles alternativeTitles) {
+        this.alternativeTitles = alternativeTitles;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hashCode(
@@ -312,7 +323,8 @@ public final class Movie {
             title,
             voteAverage,
             voteCount,
-            credits
+            credits,
+            alternativeTitles
         );
     }
 
@@ -349,7 +361,8 @@ public final class Movie {
             Objects.equal(title              , other.title              ) &&
             Objects.equal(voteAverage        , other.voteAverage        ) &&
             Objects.equal(voteCount          , other.voteCount          ) &&
-            Objects.equal(credits            , other.credits            );
+            Objects.equal(credits            , other.credits            ) &&
+            Objects.equal(alternativeTitles  , other.alternativeTitles  );
     }
 
     @Override
@@ -379,6 +392,7 @@ public final class Movie {
             .add("voteAverage"        , voteAverage        )
             .add("voteCount"          , voteCount          )
             .add("credits"            , credits            )
+            .add("alternativeTitles"  , alternativeTitles  )
             .toString();
     }
 }
