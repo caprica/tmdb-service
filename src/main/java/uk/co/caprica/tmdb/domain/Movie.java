@@ -297,6 +297,14 @@ public final class Movie {
         this.alternativeTitles = alternativeTitles;
     }
 
+    public String getPreferredTitle(String country) {
+        String result = getAlternativeTitles().getTitle(country);
+        if (result == null) {
+            result = getTitle();
+        }
+        return result;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hashCode(
