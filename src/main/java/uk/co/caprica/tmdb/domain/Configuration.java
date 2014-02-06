@@ -21,9 +21,9 @@ package uk.co.caprica.tmdb.domain;
 
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -34,7 +34,7 @@ public final class Configuration {
     @XmlElement(name="images")
     private ImageConfiguration imageConfiguration;
 
-    @XmlAttribute(name="change_keys")
+    @JsonProperty("change_keys")
     private List<String> changeKeys;
 
     public ImageConfiguration getImageConfiguration() {

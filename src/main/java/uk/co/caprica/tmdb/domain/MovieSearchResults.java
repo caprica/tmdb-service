@@ -22,8 +22,7 @@ package uk.co.caprica.tmdb.domain;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -35,10 +34,10 @@ public final class MovieSearchResults implements Iterable<MovieSearchResult> {
 
     private List<MovieSearchResult> results;
 
-    @XmlAttribute(name="total_pages")
+    @JsonProperty("total_pages")
     private Integer totalPages;
 
-    @XmlAttribute(name="total_results")
+    @JsonProperty("total_results")
     private Integer totalResults;
 
     public Integer getPage() {

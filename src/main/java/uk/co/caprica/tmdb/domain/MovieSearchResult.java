@@ -21,11 +21,8 @@ package uk.co.caprica.tmdb.domain;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import uk.co.caprica.tmdb.domain.adapter.DateAdapter;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -35,29 +32,29 @@ public final class MovieSearchResult {
 
     private boolean adult;
 
-    @XmlAttribute(name="backdrop_path")
+    @JsonProperty("backdrop_path")
     private String backdropPath;
 
     private Integer id;
 
-    @XmlAttribute(name="original_title")
+    @JsonProperty("original_title")
     private String originalTitle;
 
     private Double popularity;
 
-    @XmlAttribute(name="poster_path")
+    @JsonProperty("poster_path")
     private String posterPath;
 
-    @XmlAttribute(name="release_date")
-    @XmlJavaTypeAdapter(DateAdapter.class)
+    @JsonProperty("release_date")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private Date releaseDate;
 
     private String title;
 
-    @XmlAttribute(name="vote_average")
+    @JsonProperty("vote_average")
     private Double voteAverage;
 
-    @XmlAttribute(name="vote_count")
+    @JsonProperty("vote_count")
     private Integer voteCount;
 
     public boolean isAdult() {

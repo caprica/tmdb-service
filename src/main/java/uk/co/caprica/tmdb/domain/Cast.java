@@ -19,8 +19,7 @@
 
 package uk.co.caprica.tmdb.domain;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -28,7 +27,7 @@ import com.google.common.base.Objects;
  */
 public final class Cast extends Person {
 
-    @XmlAttribute(name="cast_id")
+    @JsonProperty("cast_id")
     private Integer castId;
 
     private String character;

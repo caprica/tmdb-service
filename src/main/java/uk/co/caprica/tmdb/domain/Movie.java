@@ -22,11 +22,8 @@ package uk.co.caprica.tmdb.domain;
 import java.util.Date;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import uk.co.caprica.tmdb.domain.adapter.DateAdapter;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -36,10 +33,10 @@ public final class Movie {
 
     private boolean adult;
 
-    @XmlAttribute(name="backdrop_path")
+    @JsonProperty("backdrop_path")
     private String backdropPath;
 
-    @XmlAttribute(name="belongs_to_collection")
+    @JsonProperty("belongs_to_collection")
     private Collection belongsToCollection;
 
     private Integer budget;
@@ -50,34 +47,34 @@ public final class Movie {
 
     private Integer id;
 
-    @XmlAttribute(name="imdb_id")
+    @JsonProperty("imdb_id")
     private String imdbId;
 
-    @XmlAttribute(name="original_title")
+    @JsonProperty("original_title")
     private String originalTitle;
 
     private String overview;
 
     private Double popularity;
 
-    @XmlAttribute(name="poster_path")
+    @JsonProperty("poster_path")
     private String posterPath;
 
-    @XmlAttribute(name="production_companies")
+    @JsonProperty("production_companies")
     private List<Name> productionCompanies;
 
-    @XmlAttribute(name="production_countries")
+    @JsonProperty("production_countries")
     private List<Country> productionCountries;
 
-    @XmlAttribute(name="release_date")
-    @XmlJavaTypeAdapter(DateAdapter.class)
+    @JsonProperty("release_date")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private Date releaseDate;
 
     private Integer revenue;
 
     private Integer runtime;
 
-    @XmlAttribute(name="spoken_languages")
+    @JsonProperty("spoken_languages")
     private List<Language> spokenLanguages;
 
     private String status;
@@ -86,15 +83,15 @@ public final class Movie {
 
     private String title;
 
-    @XmlAttribute(name="vote_average")
+    @JsonProperty("vote_average")
     private Double voteAverage;
 
-    @XmlAttribute(name="vote_count")
+    @JsonProperty("vote_count")
     private Integer voteCount;
 
     private Credits credits;
 
-    @XmlAttribute(name="alternative_titles")
+    @JsonProperty("alternative_titles")
     private AlternativeTitles alternativeTitles;
 
     public boolean isAdult() {

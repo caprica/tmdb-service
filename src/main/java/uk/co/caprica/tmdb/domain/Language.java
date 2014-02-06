@@ -19,8 +19,7 @@
 
 package uk.co.caprica.tmdb.domain;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -28,7 +27,7 @@ import com.google.common.base.Objects;
  */
 public final class Language {
 
-    @XmlAttribute(name="iso_639_1")
+    @JsonProperty("iso_639_1")
     private String languageCode;
 
     private String name;

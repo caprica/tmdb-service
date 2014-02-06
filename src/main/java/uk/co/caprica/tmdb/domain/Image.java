@@ -19,8 +19,7 @@
 
 package uk.co.caprica.tmdb.domain;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -34,16 +33,16 @@ public final class Image {
 
     private Integer height;
 
-    @XmlAttribute(name="iso_639_1")
+    @JsonProperty("iso_639_1")
     private String languageCode;
 
-    @XmlAttribute(name="aspect_ratio")
+    @JsonProperty("aspect_ratio")
     private Double aspectRatio;
 
-    @XmlAttribute(name="vote_average")
+    @JsonProperty("vote_average")
     private Double voteAverage;
 
-    @XmlAttribute(name="vote_count")
+    @JsonProperty("vote_count")
     private Integer voteCount;
 
     public String getFilePath() {

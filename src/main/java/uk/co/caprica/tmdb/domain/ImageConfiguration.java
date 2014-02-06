@@ -21,8 +21,7 @@ package uk.co.caprica.tmdb.domain;
 
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -30,25 +29,25 @@ import com.google.common.base.Objects;
  */
 public final class ImageConfiguration {
 
-    @XmlAttribute(name="base_url")
+    @JsonProperty("base_url")
     private String baseUrl;
 
-    @XmlAttribute(name="secure_base_url")
+    @JsonProperty("secure_base_url")
     private String secureBaseUrl;
 
-    @XmlAttribute(name="logo_sizes")
+    @JsonProperty("logo_sizes")
     private List<String> logoSizes;
 
-    @XmlAttribute(name="poster_sizes")
+    @JsonProperty("poster_sizes")
     private List<String> posterSizes;
 
-    @XmlAttribute(name="backdrop_sizes")
+    @JsonProperty("backdrop_sizes")
     private List<String> backdropSizes;
 
-    @XmlAttribute(name="profile_sizes")
+    @JsonProperty("profile_sizes")
     private List<String> profileSizes;
 
-    @XmlAttribute(name="still_sizes")
+    @JsonProperty("still_sizes")
     private List<String> stillSizes;
 
     public String getBaseUrl() {

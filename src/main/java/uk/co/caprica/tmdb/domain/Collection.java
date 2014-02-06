@@ -19,8 +19,7 @@
 
 package uk.co.caprica.tmdb.domain;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -32,10 +31,10 @@ public final class Collection {
 
     private String name;
 
-    @XmlAttribute(name="poster_path")
+    @JsonProperty("poster_path")
     private String posterPath;
 
-    @XmlAttribute(name="backdrop_path")
+    @JsonProperty("backdrop_path")
     private String backdropPath;
 
     public Integer getId() {
