@@ -338,7 +338,7 @@ public final class Movie {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof Configuration)) {
+        if (!(obj instanceof Movie)) {
             return false;
         }
         Movie other = (Movie)obj;

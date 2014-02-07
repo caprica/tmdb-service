@@ -158,7 +158,7 @@ public final class MovieSearchResult {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof Configuration)) {
+        if (!(obj instanceof MovieSearchResult)) {
             return false;
         }
         MovieSearchResult other = (MovieSearchResult)obj;

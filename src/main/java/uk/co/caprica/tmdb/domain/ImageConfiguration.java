@@ -116,7 +116,7 @@ public final class ImageConfiguration {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof Country)) {
+        if (!(obj instanceof ImageConfiguration)) {
             return false;
         }
         ImageConfiguration other = (ImageConfiguration) obj;
